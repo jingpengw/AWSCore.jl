@@ -37,7 +37,7 @@ Cache for files downloaded from the AWS JavaScript SDK on GitHub.
 
 cachedir() = joinpath(@__DIR__, "aws-sdk-js")
 cachehas(file) = isfile(joinpath(cachedir(), file))
-cacheget(file) = readstring(joinpath(cachedir(), file))
+cacheget(file) = read(joinpath(cachedir(), file), String)
 
 function cacheput(file, data)
     p = joinpath(cachedir(), file)
