@@ -32,7 +32,7 @@ functions directly:
 using AWSCore.Services.cloudformation
 cloudformation("CreateStack",
                StackName = "mystack",
-               TemplateBody = readstring("cloudformation_template.yaml"),
+               TemplateBody = read("cloudformation_template.yaml", String),
                Parameters = [["ParameterKey"   => "Foo",
                               "ParameterValue" => "bar"]],
                Capabilities = ["CAPABILITY_IAM"])
